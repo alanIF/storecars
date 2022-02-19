@@ -16,9 +16,9 @@ class CreateTransacaoTable extends Migration
         Schema::create('transacao', function (Blueprint $table) {
             $table->id();
             $table->text("descricao");
-            $table->int("tipo");
-            $table->int("id_veiculo");
-            $table->int("quantidade");
+            $table->integer("tipo");
+            $table->integer("id_veiculo");
+            $table->integer("quantidade");
             $table->unsignedBigInteger('user_id');
             
             $table->text("data_operacao");
