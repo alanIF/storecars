@@ -18,7 +18,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{url('veiculos/')}}">
           <i class="material-icons">car</i>
             <p>Veiculos</p>
         </a>
