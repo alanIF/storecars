@@ -7,132 +7,55 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Simple Table</h4>
+            <h4 class="card-title ">Veículos</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
                   <th>
-                    ID
+                    #
                   </th>
                   <th>
-                    Name
+                    Nome
                   </th>
                   <th>
-                    Country
+                    Imagem
                   </th>
                   <th>
-                    City
+                    Preço (R$)
                   </th>
                   <th>
-                    Salary
+                    Porta Malas (Kg)
                   </th>
+                  <th colspan="2">
+                    Ações
+                  </th>
+                 
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      1
-                    </td>
-                    <td>
-                      Dakota Rice
-                    </td>
-                    <td>
-                      Niger
-                    </td>
-                    <td>
-                      Oud-Turnhout
-                    </td>
-                    <td class="text-primary">
-                      $36,738
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      2
-                    </td>
-                    <td>
-                      Minerva Hooper
-                    </td>
-                    <td>
-                      Curaçao
-                    </td>
-                    <td>
-                      Sinaai-Waas
-                    </td>
-                    <td class="text-primary">
-                      $23,789
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      3
-                    </td>
-                    <td>
-                      Sage Rodriguez
-                    </td>
-                    <td>
-                      Netherlands
-                    </td>
-                    <td>
-                      Baileux
-                    </td>
-                    <td class="text-primary">
-                      $56,142
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      4
-                    </td>
-                    <td>
-                      Philip Chaney
-                    </td>
-                    <td>
-                      Korea, South
-                    </td>
-                    <td>
-                      Overland Park
-                    </td>
-                    <td class="text-primary">
-                      $38,735
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      5
-                    </td>
-                    <td>
-                      Doris Greene
-                    </td>
-                    <td>
-                      Malawi
-                    </td>
-                    <td>
-                      Feldkirchen in Kärnten
-                    </td>
-                    <td class="text-primary">
-                      $63,542
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      6
-                    </td>
-                    <td>
-                      Mason Porter
-                    </td>
-                    <td>
-                      Chile
-                    </td>
-                    <td>
-                      Gloucester
-                    </td>
-                    <td class="text-primary">
-                      $78,615
-                    </td>
-                  </tr>
+                @foreach($veiculos as $v)
+                        <tr>
+
+                            <td >{{$v->id}}</td>
+                            <td>{{$v->nome}}</td>
+
+                            <td>{{$v->imagem}}</td>
+                            <td>{{$v->preco}}</td>
+                            <td>{{$v->porta_malas}}</td>
+
+
+                            <td><a class="btn btn-warning " href="veiculos/{{$v->id}}/edit"><i class="fa fa-edit" ></i></a> 
+</td><td>
+                             <form action="veiculos/delete/{{$v->id}}" method="post"> @csrf @method('delete')<button class="btn btn-danger"><i class="fa fa-trash" ></i></button></form></td>
+                            </tr>
+                            @endforeach
                 </tbody>
+                <tfoot>
+                            <tr >
+                                <td colspan='7'><a class="btn btn-primary " href="{{url('veiculos/new')}}"><i class="fa fa-plus" ></i></a></td>
+                            </tr>
+                        </tfoot>
               </table>
             </div>
           </div>

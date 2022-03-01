@@ -41,7 +41,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
     Route::get('/veiculos',  [App\Http\Controllers\VeiculoController::class, 'index']);
+	Route::get('/veiculos/new',  [App\Http\Controllers\VeiculoController::class, 'new']);
 
+	Route::post('/veiculos/update/{id}',  [App\Http\Controllers\VeiculoController::class, 'update']);
+    Route::get('/veiculos/{id}/edit',  [App\Http\Controllers\VeiculoController::class, 'edit']);
+    Route::delete('/veiculos/delete/{id}',  [App\Http\Controllers\VeiculoController::class, 'delete']);
 
 });
 
