@@ -19,11 +19,15 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{url('veiculos/')}}">
-          <i class="material-icons">car</i>
+          <i class="fa fa-car"></i>
             <p>Veiculos</p>
         </a>
       </li>
-     
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('transacao/')}}">
+        <i class="fa fa-bank"></i>            <p>Transacoes</p>
+        </a>
+      </li>
      
      
       
