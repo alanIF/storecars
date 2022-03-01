@@ -58,10 +58,10 @@ class TransacaoController extends Controller
         return view('veiculos.form', ['veiculo'=> $veiculo]);
     }
     public function delete($id){
-        $veiculo= Veiculo::findOrFail($id);
+        $transacao= Transacao::findOrFail($id);
             
-        $veiculo->delete();
+        $transacao->delete();
 
-        return Redirect::to('/veiculos')->with('status', 'veiculo excluído com sucesso');;
+        return Redirect::to('/transacao')->with('status', 'transacao excluído com sucesso');;
     }
 }

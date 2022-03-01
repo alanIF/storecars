@@ -51,12 +51,13 @@
 
                             <td >{{$t->id}}</td>
                             <td >{{$t->tipo}}</td>
+                            <td >{{$t->descricao}}</td>
 
                             <td>{{$t->cliente}}</td>
 
                             <td>{{$t->veiculo}}</td>
-                            <td>{{$v->quantidade}}</td>
-                            <td>{{$v->data_operacao}}</td>
+                            <td>{{$t->quantidade}}</td>
+                            <td>{{$t->data_operacao}}</td>
 
 
                             <td><a class="btn btn-warning " href="transacao/{{$t->id}}/edit"><i class="fa fa-edit" ></i></a> 
