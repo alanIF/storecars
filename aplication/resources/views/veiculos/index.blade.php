@@ -1,6 +1,7 @@
 @extends('layouts.app', ['activePage' => 'veiculos', 'titlePage' => 'Veiculos'])
 
 @section('content')
+
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -10,6 +11,11 @@
             <h4 class="card-title ">Veículos</h4>
           </div>
           <div class="card-body">
+          @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
@@ -40,7 +46,7 @@
                             <td >{{$v->id}}</td>
                             <td>{{$v->nome}}</td>
 
-                            <td>{{$v->imagem}}</td>
+                            <td><?php echo $v->imagem?></td>
                             <td>{{$v->preco}}</td>
                             <td>{{$v->porta_malas}}</td>
 
