@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transacao;
+
+use App\Models\Veiculo;
+use App\Models\User;
+
 use Illuminate\Http\Request;
 use Redirect;
 
@@ -18,26 +22,28 @@ class TransacaoController extends Controller
     }
      // form de cadastrar
      public function new(){
-        return view('veiculos.form');
+        $veiculos = Veiculo::get();
+        $usuarios = User::get();
+        $dados = array("veiculos"=> $veiculos, "usuarios"=> $usuarios);
+        
+        return view('transacoes.form', ['dados'=> $dados]);
     }
     public function add(Request $request){
-        $veiculo= new Veiculo();
+        $transacao= new Transacao();
         
-        $veiculo->nome=$request->nome;
+        $transacao->nome=$request->nome;
        
-        $veiculo->preco=$request->preco;
-        $veiculo->imagem=$request->imagem;
-        $veiculo->porta_malas=$request->porta_malas;
+        
 
 
  
        
-        $veiculo->save();
+        $transacao->save();
        
     
 
        
-        return Redirect::to('/veiculos')->with('status', 'veiculo criado com sucesso');;
+        return Redirect::to('/transacao')->with('status', 'transação criada com sucesso');;
     }
     public function update($id ,Request $request){
         $veiculo= Veiculo::findOrFail($id);
