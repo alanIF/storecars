@@ -51,18 +51,26 @@ class TransacaoController extends Controller
         return Redirect::to('/transacao')->with('status', 'transação criada com sucesso');;
     }
     public function update($id ,Request $request){
-        $veiculo= Veiculo::findOrFail($id);
+        $transacao= Transacao::findOrFail($id);
 
-        $veiculo->nome=$request->nome;
+        
+        $transacao->descricao=$request->descricao   ;
+        $transacao->tipo=$request->tipo  ;
+        $transacao->id_veiculo=$request->veiculo  ;
+        $transacao->user_id=$request->usuario  ;
+
+        $transacao->quantidade=$request->quantidade ;
+        $transacao->data_operacao = date('d/m/Y');
+        
+
+
+ 
        
-        $veiculo->preco=$request->preco;
-        $veiculo->imagem=$request->imagem;
-        $veiculo->porta_malas=$request->porta_malas;
-        $veiculo->save();
+        $transacao->save();
 
         
 
-        return Redirect::to('/veiculos')->with('status', 'veiculo atualizado com sucesso');;
+        return Redirect::to('/transacao')->with('status', 'transacao atualizado com sucesso');;
     }
     public function edit($id){
         $veiculo= Veiculo::findOrFail($id);

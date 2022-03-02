@@ -11,23 +11,13 @@
           </div>
           <div class="card-body">
           @if(Request::is('*/edit'))
-            <form action="{{url('veiculos/update')}}/{{$veiculo->id}}" method="post">
+            <form action="{{url('transacao/update')}}/{{$transacao->id}}" method="post">
             @csrf
             <div class="mb-3">
-                <input type="text" class="form-control" name="nome" placeholder="nome" value="{{$veiculo->nome}}" required>
+                <input type="text" class="form-control" name="descricao" placeholder="descrição" value="{{$transacao->descricao}}" required>
             </div>
          
-            <div class="mb-3">
-                <input type="number" class="form-control" name="preco" placeholder="Preço" value="{{$veiculo->preco}}" required>
-            </div>
-            <div class="mb-3">
-                <input type="number" class="form-control" name="porta_malas" placeholder="Porta malas" value="{{$veiculo->porta_malas}}"  required>
-            </div>
-            <div class="mb-3">
-                <textarea class="imagem" name="imagem" required>{{$veiculo->imagem      }}</textarea>
-            </div>
-           
-           
+            =
 
             <button type="submit" class="btn btn-primary">Atualizar</button>
             <a class="btn btn-warning " href="{{url('transacao/')}}">Voltar</a>
