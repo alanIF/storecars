@@ -8,7 +8,7 @@ Sistema web que simula uma concessionaria online, que os usuarios podem comprar,
 * Gerenciar Estoque de Carros
 * Login, Session , Logout
 * API de Carros
-* Comprar, Revender e Alugar Carros
+* Vender carro
 # requisitos nao funcionais 
 * PHP
 * Laravel 8

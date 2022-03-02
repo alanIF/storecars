@@ -31,8 +31,13 @@ class TransacaoController extends Controller
     public function add(Request $request){
         $transacao= new Transacao();
         
-        $transacao->nome=$request->nome;
-       
+        $transacao->descricao=$request->descricao   ;
+        $transacao->tipo=$request->tipo  ;
+        $transacao->id_veiculo=$request->veiculo  ;
+        $transacao->user_id=$request->usuario  ;
+
+        $transacao->quantidade=$request->quantidade ;
+        $transacao->data_operacao = date('d/m/Y');
         
 
 
