@@ -17,25 +17,27 @@
                     @endif
                     <?php 
                       $i=0;
+                    
                     ?>
+
+<div class="row">
                 @foreach($veiculos as $v)
-                <?php 
-                
-                
-                ?>
+              
+                <div class="col-sm-3">
                 <div class="card" >
                   
                 <div class="card-body">
-                  <h4 class="card-title">                <?php echo $v->imagem?>
- <br/>{{$v->nome}}</h4>
+                  <h3 class="card-title text-center">                
+                  {{$v->nome}}</h3>
+                 <div class="card-text  "    > <?php echo $v->imagem ;?></div>
                   <p class="card-text">Preço: {{$v->preco}}</p>
                   <p class="card-text">Porta Malas  {{$v->porta_malas}}</p>
 
                 </div>
               </div>
-
+              </div>
               @endforeach
-
+              </div>
             </div>
           </div>
         </div>
