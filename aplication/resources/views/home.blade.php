@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-fff
+finfo_file
                     {{ __('You are logged in!') }}
                 </div>
             </div>

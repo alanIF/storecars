@@ -11,10 +11,10 @@
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
-        <a class="nav-link" >
-          <i class="material-icons">dashboard</i>
-            <p>{{ __('Dashboard') }}</p>
+    <li class="nav-item">
+        <a class="nav-link" href="{{url('home /')}}">
+          <i class="fa fa-car"></i>
+            <p>Painel</p>
         </a>
       </li>
       <li class="nav-item">
