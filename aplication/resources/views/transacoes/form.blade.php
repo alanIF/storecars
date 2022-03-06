@@ -16,8 +16,32 @@
             <div class="mb-3">
                 <input type="text" class="form-control" name="descricao" placeholder="descrição" value="{{$transacao->descricao}}" required>
             </div>
-         
-            =
+            <div class="mb-3">
+            <select class="form-control" id="tipo" name="tipo">
+                <option value="1">Entrada</option>
+                <option value="2">Venda</option>
+               
+            </select>
+            </div>
+            <div class="mb-3">
+                <input type="number" class="form-control" name="quantidade" placeholder="Quantidade" value="{{$transacao->quantidade}}"  required>
+            </div>
+            <div class="mb-3">
+            <select class="form-control" id="usuario" name="usuario">
+            @foreach($dados["usuarios"] as $u)
+            <option value="{{$u->id}}"> {{$u->name}}</option>
+                            
+            @endforeach   
+            </select>
+            </div>
+            <div class="mb-3">
+            <select class="form-control" id="veiculo" name="veiculo">
+            @foreach($dados["veiculos"] as $v)
+            <option value="{{$v->id}}"> {{$v->nome}}</option>
+                            
+            @endforeach   
+            </select>
+            </div>
 
             <button type="submit" class="btn btn-primary">Atualizar</button>
             <a class="btn btn-warning " href="{{url('transacao/')}}">Voltar</a>

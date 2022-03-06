@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Veiculo;
 
 class HomeController extends Controller
 {
@@ -21,6 +22,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $sql = 'Select * from veiculo v ';
+        $veiculos = \DB::select($sql);
+        return view('dashboard',['veiculos' => $veiculos]);
     }
 }
